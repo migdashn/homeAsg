@@ -60,13 +60,12 @@ void dispacher_thread() {
     wt2.detach();
     p =  *(&payload);
     cv.notify_all();
-    //return *(&payload);
+    //return &payload);
 }
 
 int main(int argc, char** argv)
 {
     std::cout << "Calling dispatcher thread" << std::endl;
-     //= dispacher_thread();
     std::thread t(&dispacher_thread);
     delete p;
 
